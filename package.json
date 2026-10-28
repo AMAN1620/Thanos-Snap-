@@ -1,0 +1,19 @@
+{
+  "name": "thanos-snap-meet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension: snap your fingers on a Google Meet call and turn to dust.",
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "postinstall": "node scripts/setup.mjs",
+    "test": "node --test 'test/*.test.mjs'",
+    "test:e2e": "node test/e2e.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.1.1"
+  },
+  "devDependencies": {
+    "puppeteer": "25.16.0"
+  }
+}

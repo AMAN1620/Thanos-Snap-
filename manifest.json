@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Thanos Snap for Meet",
+  "version": "0.1.0",
+  "description": "Snap your fingers on a Google Meet call and turn to dust.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["src/page-hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["vendor/vision_wasm_internal.js", "src/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/*", "vendor/*", "models/*"],
+      "matches": ["https://meet.google.com/*"]
+    }
+  ]
+}
